@@ -1,0 +1,39 @@
+name:                hangman
+version:             0.1.0.0
+synopsis:            The Hangman game
+homepage:            https://github.com/scarvalhojr/learning
+license:             BSD3
+license-file:        LICENSE
+author:              Sergio de Carvalho
+copyright:           2017 Sergio de Carvalho
+category:            Game
+build-type:          Simple
+extra-source-files:  data/dict.txt
+cabal-version:       >=1.10
+extra-source-files:  README.md
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Main
+  default-language:    Haskell2010
+  ghc-options:         -Wall -fwarn-tabs
+  build-depends:       base >= 4.7 && < 5
+                     , random
+
+test-suite tests
+  hs-source-dirs:      tests
+  main-is:             Tests.hs
+  type:                exitcode-stdio-1.0
+  default-language:    Haskell2010
+  ghc-options:         -Wall -fwarn-tabs -fno-warn-orphans
+  build-depends:       base >= 4.7 && < 5
+                     , hangman
+                     , hspec
+
+executable hangman
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  default-language:    Haskell2010
+  ghc-options:         -Wall -fwarn-tabs
+  build-depends:       base >= 4.7 && < 5
+                     , random

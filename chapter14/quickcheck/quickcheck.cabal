@@ -1,0 +1,22 @@
+name:                quickcheck
+version:             0.1.0.0
+author:              Sergio de Carvalho
+copyright:           2017 Sergio de Carvalho
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      .
+  exposed-modules:     Lib
+  default-language:    Haskell2010
+  ghc-options:         -Wall -fwarn-tabs
+  build-depends:       base >= 4.7 && < 5
+
+test-suite tests
+  hs-source-dirs:      .
+  main-is:             Tests.hs
+  type:                exitcode-stdio-1.0
+  default-language:    Haskell2010
+  ghc-options:         -Wall -fwarn-tabs -fno-warn-orphans
+  build-depends:       base >= 4.7 && < 5
+                     , QuickCheck
