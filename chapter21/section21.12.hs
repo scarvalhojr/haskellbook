@@ -113,9 +113,20 @@ instance Traversable (Big a) where
 
 ---
 
--- ???
 data S n a = S (n a) a
   deriving Show
+
+instance (Functor n) => Functor (S n) where
+  -- fmap :: (a -> b) -> S n a -> S n b
+  fmap f (S na a) = S (fmap f na) (f a)
+
+instance (Foldable n) => Foldable (S n) where
+  -- foldr :: (a -> b -> b) -> b -> S n a -> b
+  foldr f z (S na a) = f a (foldr f z na)
+
+instance Traversable n => Traversable (S n) where
+  -- traverse :: Applicative f => (a -> f b) -> S n a -> f (S n b)
+  traverse f (S na a) = S <$> (traverse f na) <*> (f a)
 
 ---
 
