@@ -1,0 +1,26 @@
+name:                myscotty
+version:             0.1.0.0
+license:             BSD3
+author:              "Sergio de Carvalho"
+copyright:           "2018 Sergio de Carvalho"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+description:         Please see README.md
+
+dependencies:
+- base >= 4.7 && < 5
+
+executables:
+  myscotty:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - transformers
+    - scotty
