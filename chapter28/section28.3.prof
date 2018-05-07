@@ -1,0 +1,29 @@
+	Sat May  5 17:37 2018 Time and Allocation Profiling Report  (Final)
+
+	   section28.3 +RTS -P -RTS
+
+	total time  =        0.19 secs   (191 ticks @ 1000 us, 1 processor)
+	total alloc = 792,054,816 bytes  (excludes profiling overheads)
+
+COST CENTRE MODULE SRC                           %time %alloc  ticks     bytes
+
+g           Main   section28.3.hs:(8,1)-(10,14)   91.1   90.9    174 720003632
+f           Main   section28.3.hs:(3,1)-(5,14)     8.9    9.1     17  72011856
+
+
+                                                                                   individual      inherited
+COST CENTRE  MODULE                SRC                          no.     entries  %time %alloc   %time %alloc  ticks     bytes
+
+MAIN         MAIN                  <built-in>                   112          0    0.0    0.0   100.0  100.0      0       648
+ CAF         Main                  <entire-module>              223          0    0.0    0.0   100.0  100.0      0       208
+  f          Main                  section28.3.hs:(3,1)-(5,14)  226          1    8.9    9.1     8.9    9.1     17  72000264
+  g          Main                  section28.3.hs:(8,1)-(10,14) 228          1   91.1   90.9    91.1   90.9    174 720000304
+  main       Main                  section28.3.hs:(13,1)-(15,3) 224          1    0.0    0.0     0.0    0.0      0        40
+ CAF         GHC.Conc.Signal       <entire-module>              203          0    0.0    0.0     0.0    0.0      0       640
+ CAF         GHC.IO.Encoding       <entire-module>              186          0    0.0    0.0     0.0    0.0      0      2768
+ CAF         GHC.IO.Encoding.Iconv <entire-module>              184          0    0.0    0.0     0.0    0.0      0       200
+ CAF         GHC.IO.Handle.FD      <entire-module>              175          0    0.0    0.0     0.0    0.0      0     34704
+ CAF         GHC.IO.Handle.Text    <entire-module>              173          0    0.0    0.0     0.0    0.0      0        88
+ main        Main                  section28.3.hs:(13,1)-(15,3) 225          0    0.0    0.0     0.0    0.0      0        32
+  f          Main                  section28.3.hs:(3,1)-(5,14)  227          0    0.0    0.0     0.0    0.0      0     11592
+  g          Main                  section28.3.hs:(8,1)-(10,14) 229          0    0.0    0.0     0.0    0.0      0      3328

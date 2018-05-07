@@ -1,0 +1,26 @@
+	Sat May  5 17:58 2018 Time and Allocation Profiling Report  (Final)
+
+	   section28.4 +RTS -hc -p -RTS
+
+	total time  =        0.39 secs   (394 ticks @ 1000 us, 1 processor)
+	total alloc = 871,346,856 bytes  (excludes profiling overheads)
+
+COST CENTRE MODULE SRC                           %time %alloc
+
+main        Main   section28.4.hs:(6,1)-(12,29)   57.6    0.0
+incdInts    Main   section28.4.hs:3:1-25          41.9  100.0
+
+
+                                                                                   individual      inherited
+COST CENTRE  MODULE                SRC                          no.     entries  %time %alloc   %time %alloc
+
+MAIN         MAIN                  <built-in>                   112          0    0.0    0.0   100.0  100.0
+ CAF         Main                  <entire-module>              223          0    0.0    0.0    99.0  100.0
+  incdInts   Main                  section28.4.hs:3:1-25        226          1   41.9  100.0    41.9  100.0
+  main       Main                  section28.4.hs:(6,1)-(12,29) 224          1   57.1    0.0    57.1    0.0
+ CAF         GHC.Conc.Signal       <entire-module>              203          0    0.3    0.0     0.3    0.0
+ CAF         GHC.IO.Encoding       <entire-module>              186          0    0.0    0.0     0.0    0.0
+ CAF         GHC.IO.Encoding.Iconv <entire-module>              184          0    0.3    0.0     0.3    0.0
+ CAF         GHC.IO.Handle.FD      <entire-module>              175          0    0.0    0.0     0.0    0.0
+ CAF         GHC.IO.Handle.Text    <entire-module>              173          0    0.0    0.0     0.0    0.0
+ main        Main                  section28.4.hs:(6,1)-(12,29) 225          0    0.5    0.0     0.5    0.0
